@@ -1,0 +1,21 @@
+{
+  "name": "vanilla-js-performance",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "playwright test",
+    "test:update-stats": "UPDATE_STATS=yes playwright test",
+    "static-server": "http-server",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "keywords": ["dom-vs-vdom", "dom-updates"],
+  "author": "Peter Solopov",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4",
+    "http-server": "^14.1.1",
+    "prettier": "^3.3.3"
+  }
+}

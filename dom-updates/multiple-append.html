@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>multiple-append</title>
+
+    <style>
+      body {
+        font-family: monospace;
+      }
+
+      .item {
+        font-size: 14px;
+        color: #333;
+        padding: 5px;
+        margin: 2px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: hsl(90 51% 76% / 1);
+      }
+
+      #list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>multiple append | <a href="./document-fragment">document fragment</a></h1>
+    <div>
+      <span><b>multiple append time for 100 000 elements: </b></span>
+      <span class="time"></span>
+    </div>
+
+    <ul id="list"></ul>
+
+    <script>
+      const list = document.getElementById('list');
+      const hue = Math.floor(Math.random() * 361);
+
+      const startTime = performance.now();
+
+      for (let i = 0; i < 100_000; i++) {
+        const item = document.createElement('li');
+        item.classList.add('item');
+        item.style.backgroundColor = `hsl(${hue}, 50%, 76%)`;
+        item.textContent = `Element #${i}`;
+        list.appendChild(item);
+      }
+
+      const endTime = performance.now();
+
+      const durationMs = endTime - startTime;
+
+      document.querySelector('.time').textContent = `${durationMs}ms`;
+
+      console.log(`multiple-append: ${endTime - startTime} ms`);
+    </script>
+  </body>
+</html>
