@@ -38,6 +38,9 @@ It’s logical to assume that the second option would be slower due to the multi
 
 You can view examples of [Document Fragment](https://petersolopov.github.io/vanilla-js-performance/dom-updates/document-fragment) and [Multiple Append](https://petersolopov.github.io/vanilla-js-performance/dom-updates/multiple-append) directly in your browser.
 
+> [!CAUTION]  
+> Loading this page in Safari may take longer than expected. For a faster experience, please use modern browsers like Chrome or Firefox.
+
 ### Modern Browser Optimizations
 
 Modern browsers efficiently manage DOM changes using optimizations like batching and reconciliation. As a result, adding elements directly may not be significantly slower than using a fragment, as browsers delay and merge small changes to optimize execution.
