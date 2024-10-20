@@ -8,7 +8,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "keywords": ["dom-vs-vdom", "dom-updates"],
+  "keywords": [
+    "dom-vs-vdom",
+    "dom-updates"
+  ],
   "author": "Peter Solopov",
   "license": "MIT",
   "description": "",
