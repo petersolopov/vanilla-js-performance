@@ -14,7 +14,6 @@
         color: #333;
         padding: 5px;
         margin: 2px;
-        border: 1px solid #ccc;
         border-radius: 6px;
         background-color: hsl(90 51% 76% / 1);
       }
@@ -25,14 +24,22 @@
         flex-wrap: wrap;
         padding: 0;
       }
+
+      .header {
+        font-size: 32px;
+      }
     </style>
   </head>
   <body>
-    <h1>multiple append | <a href="./document-fragment">document fragment</a></h1>
-    <div>
-      <span><b>multiple append time for 100 000 elements: </b></span>
-      <span class="time"></span>
-    </div>
+    <h1 class="header">Multiple Append</h1>
+    <p>
+      <span>Time taken to append 100 000 elements inside loop: </span>
+      <b><span class="time"></span></b>
+    </p>
+    <p>
+      The time should be comparable to using a <a href="./document-fragment.html">document fragment</a> with a single
+      update.
+    </p>
 
     <ul id="list"></ul>
 
@@ -52,11 +59,9 @@
 
       const endTime = performance.now();
 
-      const durationMs = endTime - startTime;
+      const durationMs = Math.floor(endTime - startTime);
 
-      document.querySelector('.time').textContent = `${durationMs}ms`;
-
-      console.log(`multiple-append: ${endTime - startTime} ms`);
+      document.querySelector('.time').textContent = `${durationMs} ms`;
     </script>
   </body>
 </html>
