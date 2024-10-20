@@ -36,6 +36,8 @@ for (let i = 0; i < 100_000; i++) {
 
 It’s logical to assume that the second option would be slower due to the multiple DOM operations, which is the primary reason for the popularity of VDOM. _However, modern browsers are so well-optimized that the execution time of these two approaches is often about the same._
 
+You can view examples of [Document Fragment](https://petersolopov.github.io/vanilla-js-performance/dom-updates/document-fragment) and [Multiple Append](https://petersolopov.github.io/vanilla-js-performance/dom-updates/multiple-append) directly in your browser.
+
 ### Modern Browser Optimizations
 
 Modern browsers efficiently manage DOM changes using optimizations like batching and reconciliation. As a result, adding elements directly may not be significantly slower than using a fragment, as browsers delay and merge small changes to optimize execution.
